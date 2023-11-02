@@ -17,3 +17,29 @@
     background: var(--background);
     padding: 20px;
 }
+.bg-bar{
+    background-color:var(--color-text-grey);
+    height: 63px;
+}
+.bg-notification{
+    background-color: var(--color-notification);
+    height: 63px;
+}
+img{
+   
+    width: 60px;
+}
+
+.bg-circle{
+    border-radius: 50%;
+    background-color: var(--color-white);
+    margin-left: 20px;
+    margin-top: 20px;
+}
+.font-size{
+    font-size: 13px;
+    margin-left:  38px;
+}
+.bg-search{
+    width: 40px;
+}
