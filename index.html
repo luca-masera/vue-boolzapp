@@ -46,10 +46,12 @@
 
                         <ul class="list-group ">
                             <li v-for="(utenti, index) in contacts">
-                                
+
                                 <img class="rounded-circle" :src="utenti.avatar" :alt="utenti.avatar">
-                                {{utenti.name}} 
-                               
+                                {{utenti.name}}
+
+                                <span class="font-size-msg mb-4 d-flex">Ultimo messaggio</span>
+
                             </li>
                         </ul>
 
