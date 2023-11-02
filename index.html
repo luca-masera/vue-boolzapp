@@ -43,32 +43,34 @@
                                 placeholder="Cerca o inizia una nuova chat">
 
                         </div>
-
-                        <ul class="list-group bg-white ">
-                            <li v-for="(contact, index) in contacts">
-
-                                <img class="rounded-circle" :src="contact.avatar" :alt="contact.avatar">
-                                {{contact.name}} {{contact.messages.last}} 
-                                <div class="d-flex justify-content-between ">
-                                    <span class="font-size-msg">{{contact.messages[ contact.messages.length - 1 ].message}}  </span>
-                                    <span class="font-size-msg">{{contact.messages[ contact.messages.length - 1 ].date}}</span>
-                                </div>
                         
-                                
-                            </li>
-                        </ul>
+                            <ul class="list-group bg-white ">
+                                <li v-for="(contact, index) in contacts">
 
+                                    <img class="rounded-circle" :src="contact.avatar" :alt="contact.avatar">
+                                    {{contact.name}} {{contact.messages.last}} 
+                                    <div class="d-flex justify-content-between ">
+                                        <span class="font-size-msg">{{contact.messages[ contact.messages.length - 1 ].message}}  </span>
+                                        <span class="font-size-msg">{{contact.messages[ contact.messages.length - 1 ].date}}</span>
+                                    </div>                        
+                                </li>
+                            </ul>
+                       
+                    </div>
+                </div>
+                <div class="col-12 col-md-8">
+                    <div class="bg-bar">
 
-
-
+                    </div>
+                    <div class="h0 background-img">
+                        
                     </div>
 
                 </div>
-
+                
             </div>
-
+           
         </div>
-
     </div>
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
