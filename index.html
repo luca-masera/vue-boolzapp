@@ -16,7 +16,7 @@
         <div class="container h-100">
             <div class="row h-100 flex-nowrap">
                 <div class="col-12 col-md-4">
-                    <div class="h-100 flex-column flex-nowrap">
+                    <div class="row h-100 flex-column flex-nowrap">
                         <div class="col-12 bg-bar d-flex align-items-center
                         justify-content-between">
                             <div>
@@ -37,21 +37,24 @@
 
                             </div>
                         </div>
-                        <div class="col-12 input-group">
+                        <div class="col-12 input-group bg-white">
                             <span class="input-group-text my-2"><i class="fa-solid fa-magnifying-glass"></i></span>
                             <input type="text" class="form-control bg-search d-inline-block my-2"
                                 placeholder="Cerca o inizia una nuova chat">
 
                         </div>
 
-                        <ul class="list-group ">
-                            <li v-for="(utenti, index) in contacts">
+                        <ul class="list-group bg-white ">
+                            <li v-for="(contact, index) in contacts">
 
-                                <img class="rounded-circle" :src="utenti.avatar" :alt="utenti.avatar">
-                                {{utenti.name}}
-
-                                <span class="font-size-msg mb-4 d-flex">Ultimo messaggio</span>
-
+                                <img class="rounded-circle" :src="contact.avatar" :alt="contact.avatar">
+                                {{contact.name}} {{contact.messages.last}} 
+                                <div class="d-flex justify-content-between ">
+                                    <span class="font-size-msg">{{contact.messages[ contact.messages.length - 1 ].message}}  </span>
+                                    <span class="font-size-msg">{{contact.messages[ contact.messages.length - 1 ].date}}</span>
+                                </div>
+                        
+                                
                             </li>
                         </ul>
 
