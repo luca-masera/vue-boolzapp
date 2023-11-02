@@ -61,5 +61,8 @@ li:hover{
     background-image: url(../img/mine.jpg)
 }
 .h0{
-    height: 90%;
+    height: 84%;
+}
+.font-size-icons{
+    font-size: 25px;
 }

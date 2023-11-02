@@ -181,7 +181,10 @@ createApp({
     },
     
     methods:{
-
+        
+        ultimoMsg(){
+            
+        }
     }
 })
 .mount('#app')
