@@ -177,7 +177,7 @@ createApp({
                     ],
                 },
             ],
-            activeIndex: 0,
+            activeContactIndex: 0,
             searchText : '',
             text: ''
         }
@@ -185,6 +185,9 @@ createApp({
     
     methods:{
         
+        selectContact(id){
+            this.activeContactIndex = this.contacts.findIndex((contact)=> contact.id === id)
+        },
         addText(){
             this.lastId++;
             
