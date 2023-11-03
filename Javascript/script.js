@@ -177,10 +177,8 @@ createApp({
                     ],
                 },
             ],
-            contacts: contactList,
-            contactindex: 0,
-            searchText: '',
-            message: ''
+            lastId : 8,
+            newText : ''
         }
     },
     
