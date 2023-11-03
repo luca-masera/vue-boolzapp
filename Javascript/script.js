@@ -175,15 +175,28 @@ createApp({
                             status: 'received'
                         }
                     ],
-                }
-            ]
+                },
+            ],
+            contacts: contactList,
+            contactindex: 0,
+            searchText: '',
+            message: ''
         }
     },
     
     methods:{
         
-        ultimoMsg(){
+        addText(){
+            this.lastId++;
             
+            const newMsg = {
+                
+                message : contacts.messages.message.this.newText,
+                status : 'sent'
+            }
+            this.contacts.push(newMsg),
+            this.newText = ''
+
         }
     }
 })
