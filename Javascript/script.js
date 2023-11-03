@@ -177,8 +177,9 @@ createApp({
                     ],
                 },
             ],
-            lastId : 8,
-            newText : ''
+            activeIndex: 0,
+            searchText : '',
+            text: ''
         }
     },
     
