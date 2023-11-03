@@ -189,15 +189,14 @@ createApp({
             this.activeContactIndex = this.contacts.findIndex((contact)=> contact.id === id)
         },
         addText(){
-            this.lastId++;
-            
+                        
             const newMsg = {
                 
-                message : contacts.messages.message.this.newText,
+                message : this.message,
                 status : 'sent'
             }
-            this.contacts.push(newMsg),
-            this.newText = ''
+            this.messages.push(newMsg),
+            this.text = ''
 
         }
     }
