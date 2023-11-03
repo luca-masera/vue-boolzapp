@@ -20,9 +20,8 @@
     padding: 20px;
 }
 .bg-bar{
-    background-color:var(--color-text-grey);
-    height: 63px;
-    width: 100%;
+    background-color:var(--color-headers);
+    
 }
 .bg-notification{
     background-color: var(--color-notification);

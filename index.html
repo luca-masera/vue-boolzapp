@@ -62,32 +62,41 @@
                     </div>
                 </div>
                 <div class="col-12 col-md-8 background-img ">
-                    <div class="bg-bar d-flex">
-                        
-                            <img class="rounded-circle" src="img/avatar_1.jpg" alt="Michele">
-                        
-                        <div class="d-flex">
-                            <span>Michele</span>
-                            <span>Ultimo accesso oggi</span>
+                    <div class="row h-100 flex-column flex-nowrap">
+                        <div class="col-12 bg-bar d-flex  align-items-center justify-content-between">
+                            <div class="d-flex">
+
+                                <img class="rounded-circle" src="img/avatar_1.jpg" alt="Michele">
+
+                                <div >
+                                    <span>Michele</span>
+                                    <span>Ultimo accesso oggi</span>
+                                </div>
+                            </div>
+                       
+                            <div>
+                                <i class="fa-solid fa-magnifying-glass m-2"></i>
+                                <i class="fa-solid fa-paperclip m-2"></i>
+                                <i class="fa-solid fa-ellipsis-vertical m-2"></i>
+                            </div>
                         </div>
+                        <div class="h1 col-12 flex-grow-1 overflow-y-auto">
+                            <div class="d-flex py-3">
+                                <div class="text-sent">Ciao, come stai?</div>
+                            </div>
+                            <div class="d-flex py-3">
+                                <div class="text-received">Ciao, bene grazie</div>
+                            </div>
 
-                    </div>
-                    <div class="h1 col-12 flex-grow-1 overflow-y-auto">
-                        <div class="d-flex py-3">
-                            <div class="text-sent">Ciao, come stai?</div>
                         </div>
-                        <div class="d-flex py-3">
-                            <div class="text-received">Ciao, bene grazie</div>
+                        <div class="bg-bar d-flex align-items-center justify-content-around">
+                            <span><i class="fa-regular fa-face-smile font-size-icons ms-4 "></i></span>
+                            <input type="text" class="form-control w-75 mx-5 bg-search d-inline-block my-2"
+                                placeholder="Scrivi un messaggio" v-model="newText" @keyup.enter="addText">
+                            <span><i class="fa-solid fa-microphone font-size-icons me-4 " @click="addText"></i></span>
+
+
                         </div>
-
-                    </div>
-                    <div class="bg-bar d-flex align-items-center justify-content-around">
-                        <span><i class="fa-regular fa-face-smile font-size-icons ms-4 "></i></span>
-                        <input type="text" class="form-control w-75 mx-5 bg-search d-inline-block my-2"
-                            placeholder="Scrivi un messaggio" v-model="newText" @keyup.enter="addText">
-                        <span><i class="fa-solid fa-microphone font-size-icons me-4 " @click="addText"></i></span>
-
-
                     </div>
 
                 </div>
