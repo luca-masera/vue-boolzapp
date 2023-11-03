@@ -86,3 +86,6 @@ li:hover{
     border-radius: 10px;
 
 }
+.pointer{
+    cursor: pointer;
+}

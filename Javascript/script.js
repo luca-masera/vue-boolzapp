@@ -177,6 +177,7 @@ createApp({
                     ],
                 },
             ],
+
             activeContactIndex: 0,
             searchText : '',
             text: ''
@@ -189,16 +190,20 @@ createApp({
             this.activeContactIndex = this.contacts.findIndex((contact)=> contact.id === id)
         },
         addText(){
-                        
+            console.log(this.text);
+
             const newMsg = {
-                
-                message : this.message,
+                date:'now',                
+                message : this.text,
                 status : 'sent'
             }
-            this.messages.push(newMsg),
-            this.text = ''
+            this.contacts[this.activeContactIndex].messages.push(newMsg);
+
+            this.text = '';
+            
 
         }
+    
     }
 })
 .mount('#app')
