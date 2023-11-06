@@ -50,8 +50,9 @@
                                 @click="selectContact(contact.id)">
 
                                 <img class="rounded-circle" :src="contact.avatar" :alt="contact.avatar">
-                                {{contact.name}} {{contact.messages.last}}
+                                
                                 <div class="d-flex justify-content-between ">
+                                    <span class="font-size-msg">{{contact.name}}</span>
                                     <span class="font-size-msg">{{contact.messages[ contact.messages.length - 1
                                         ].message}} </span>
                                     <span class="font-size-msg">{{contact.messages[ contact.messages.length - 1
@@ -71,7 +72,7 @@
                                     :alt="contacts[activeContactIndex].name">
 
 
-                                <div class="d-flex">
+                                <div>
                                     <span>{{contacts[activeContactIndex].name}}</span>
                                     <span></span>
 
@@ -86,16 +87,15 @@
                             </div>
                         </div>
                         <div class="h1 col-12 flex-grow-1 overflow-y-auto">
-                            <div class="d-flex py-3" v-for="(text,index) in contacts [activeContactIndex].messages"
+                            <div class="d-flex py-3" v-for="(text,index) in activeContact.messages"
                                 :key="index">
                                 <div class="font-size-msg " :class="text.status">
                                     <span>{{text.message}}</span>
                                     <div class="dropdown">
-                                        <i class="fa-solid fa-arrows-to-dot" @click="option(i)"></i>
+                                        <i class="fa-solid fa-arrows-to-dot" @click="option(index)" style="cursor:pointer"></i>
                                         <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Action</a></li>
-                                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                            <li><a class="dropdown-item" href="#">Message Info</a></li>
+                                            <li><a class="dropdown-item" href="#" @click ="deleteText(index)">Delete message</a></li>                                        
                                         </ul>
                                     </div>
                                 </div>
@@ -121,7 +121,7 @@
 
         </div>
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.3/build/global/luxon.min.js"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="Javascript/script.js"></script>
 </body>

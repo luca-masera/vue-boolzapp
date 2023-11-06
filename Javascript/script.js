@@ -1,7 +1,8 @@
 const {createApp} = Vue
-
+const dt = luxon.DateTime;
 
 createApp({
+    
     
     data(){
         
@@ -181,7 +182,7 @@ createApp({
             activeContactIndex: 0,
             searchText : '',
             text: '',
-            message: null
+            messageOption: null
         }
     },
     
@@ -190,11 +191,18 @@ createApp({
         selectContact(id){
             this.activeContactIndex = this.contacts.findIndex((contact)=> contact.id === id)
         },
+        generateText(){
+            
+            const data = dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS)
+            console.log (data)
+            return data
+          
+        },
+        
         addText(){
             console.log(this.text);
-            
             const newMsg = {
-                date:'now',                
+                date: this.generateText(),                
                 message : this.text,
                 status : 'received'
             }
@@ -218,34 +226,40 @@ createApp({
                 }
                 console.log(item.visible)
             })
-                        
-           
-
+         
         },
-        
-        option(i){
-            
-            if(this.message !== i){
-                this.message = i;
-                
-            }else{
-                this.message = null;
-            }
-        },
+     
         
         
-        deleteText(index){
-            this.contacts[this.activeContactIndex].messages.splice(index,i);
-            this.message = null;
-        }
+        
+       
     },
     
     computed:{
         
         contactsFilter(){
             return this.contacts.filter((contact) => contact.name.toLowerCase().includes(this.searchText.toLowerCase()))
-        }
+        },
+        
+        activeContact(){
+            return this.contacts[this.activeContactIndex]
+        },
+        
+        /*option(index){
+                                    
+            if(this.messageOption !== index){
+                this.messageOption = index;
+                
+            }else{
+                this.messageOption = null;
+            }
+        },
+        
+        
+        deleteText(index){
+            this.contacts[this.activeContactIndex].messages.splice(index,1);
+            this.messageOption = null;
+        }*/
     }
 
-})
-.mount('#app')
+}).mount('#app')
