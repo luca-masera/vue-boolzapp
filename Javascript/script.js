@@ -194,11 +194,21 @@ createApp({
         generateText(){
             
             const data = dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS)
-            console.log (data)
             return data
           
         },
         
+        generateSplit(){
+            const orario = dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS)
+            //per mettere orario
+            /*const ora = orario.slice(10,19)
+            return ora*/
+
+            //per mettere solo la data
+            const dataString = orario.split (',', 1);
+            dataString.toLocaleString()
+            return dataString.toLocaleString()
+        },
         addText(){
             console.log(this.text);
             const newMsg = {
@@ -241,9 +251,7 @@ createApp({
             return this.contacts.filter((contact) => contact.name.toLowerCase().includes(this.searchText.toLowerCase()))
         },
         
-        activeContact(){
-            return this.contacts[this.activeContactIndex]
-        },
+       
         
         /*option(index){
                                     
