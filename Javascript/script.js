@@ -180,7 +180,8 @@ createApp({
 
             activeContactIndex: 0,
             searchText : '',
-            text: ''
+            text: '',
+            message: null
         }
     },
     
@@ -220,10 +221,23 @@ createApp({
                         
            
 
-        }
-
+        },
         
-       
+        option(i){
+            
+            if(this.message !== i){
+                this.message = i;
+                
+            }else{
+                this.message = null;
+            }
+        },
+        
+        
+        deleteText(index){
+            this.contacts[this.activeContactIndex].messages.splice(index,i);
+            this.message = null;
+        }
     },
     
     computed:{
