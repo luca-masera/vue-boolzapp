@@ -46,7 +46,7 @@
                         </div>
 
                         <ul class="list-group bg-white ">
-                            <li v-for="(contact, index) in contacts" :key="contact.id" @click ="selectContact(contact.id)">
+                            <li v-for="(contact, index) in contactsFilter" :key="contact.id" @click ="selectContact(contact.id)">
 
                                 <img class="rounded-circle" :src="contact.avatar" :alt="contact.avatar">
                                 {{contact.name}} {{contact.messages.last}}

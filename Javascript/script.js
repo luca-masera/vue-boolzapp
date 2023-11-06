@@ -201,9 +201,34 @@ createApp({
 
             this.text = '';
             
+        },
+        
+        searchContact(){
+            searchText = this.searchText.toLowerCase();
+            console.log (searchText);
+            
+            this.contacts.forEach((item)=>{
+                
+                if(item.name.toLowerCase().includes(searchText)){
+                    item.visible = true;
+                    
+                } else {
+                    item.visible=false;
+                }
+                console.log(item.visible)
+            })
+                        
+           
 
         }
+    },
     
+    computed:{
+        
+        contactsFilter(){
+            return this.contacts.filter((contact) => contact.name.toLowerCase().includes(this.searchText.toLowerCase()))
+        }
     }
+
 })
 .mount('#app')
