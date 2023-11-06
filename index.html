@@ -46,7 +46,8 @@
                         </div>
 
                         <ul class="list-group bg-white ">
-                            <li v-for="(contact, index) in contactsFilter" :key="contact.id" @click ="selectContact(contact.id)">
+                            <li v-for="(contact, index) in contactsFilter" :key="contact.id"
+                                @click="selectContact(contact.id)">
 
                                 <img class="rounded-circle" :src="contact.avatar" :alt="contact.avatar">
                                 {{contact.name}} {{contact.messages.last}}
@@ -57,7 +58,7 @@
                                         ].date}}</span>
                                 </div>
                             </li>
-                        </dul>
+                            </dul>
 
                     </div>
                 </div>
@@ -66,14 +67,18 @@
                         <div class="col-12 bg-bar d-flex  align-items-center justify-content-between">
                             <div class="d-flex">
 
-                                <img :src="contacts[activeContactIndex].avatar" :alt="contacts[activeContactIndex].name">
+                                <img :src="contacts[activeContactIndex].avatar"
+                                    :alt="contacts[activeContactIndex].name">
 
-                                <div >
+
+                                <div class="d-flex">
                                     <span>{{contacts[activeContactIndex].name}}</span>
                                     <span></span>
+
                                 </div>
+                              
                             </div>
-                       
+
                             <div>
                                 <i class="fa-solid fa-magnifying-glass m-2"></i>
                                 <i class="fa-solid fa-paperclip m-2"></i>
@@ -81,18 +86,30 @@
                             </div>
                         </div>
                         <div class="h1 col-12 flex-grow-1 overflow-y-auto">
-                            <div class="d-flex py-3" v-for ="(text,index) in contacts [activeContactIndex].messages" :key="index">
-                                <div class="font-size-msg " :class ="text.status">{{text.message}}</div>                                
+                            <div class="d-flex py-3" v-for="(text,index) in contacts [activeContactIndex].messages"
+                                :key="index">
+                                <div class="font-size-msg " :class="text.status">
+                                    <span>{{text.message}}</span>
+                                    <div class="dropdown">
+                                        <i class="fa-solid fa-arrows-to-dot"></i>
+                                        <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
                             </div>
                             
-                           
-
                         </div>
+                        
                         <div class="bg-bar d-flex align-items-center justify-content-around">
                             <span><i class="fa-regular fa-face-smile font-size-icons ms-4 "></i></span>
                             <input type="text" class="form-control w-75 mx-5 bg-search  my-2"
-                                placeholder="Scrivi un messaggio" v-model="text" @keyup.enter="addText()"> 
-                            <span><i class="fa-solid fa-share font-size-icons me-4 pointer " @click="addText()"></i></span>
+                                placeholder="Scrivi un messaggio" v-model="text" @keyup.enter="addText()">
+                            <span><i class="fa-solid fa-share font-size-icons me-4 pointer "
+                                    @click="addText()"></i></span>
 
 
                         </div>
