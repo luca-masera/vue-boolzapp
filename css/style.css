@@ -66,13 +66,13 @@ li:hover{
 .font-size-icons{
     font-size: 25px;
 }
-.text-sent{
+.sent{
     padding: 10px 20px;
     border-radius: 10px;
     margin-left: auto;
     background-color: var(--color-sent-message);
 }
-.text-received{
+.received{
     padding: 10px 20px;
     border-radius: 10px;
     margin-right: auto;

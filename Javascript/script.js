@@ -191,11 +191,11 @@ createApp({
         },
         addText(){
             console.log(this.text);
-
+            
             const newMsg = {
                 date:'now',                
                 message : this.text,
-                status : 'sent'
+                status : 'received'
             }
             this.contacts[this.activeContactIndex].messages.push(newMsg);
 
